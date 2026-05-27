@@ -1,0 +1,15 @@
+apiVersion: grounds.gg/v1
+name: sample-leaderboard-plugin
+type: plugin-paper
+baseImage: paper
+
+# Declared Domain-Services this plugin calls via the Grounds SDK.
+# Forge injects `LEADERBOARD_SERVICE_URL` into the pod's env; the SDK
+# reads it via `GroundsServices.channel("leaderboard")`. The proto pin
+# (`use:`) is documentation today; future versions will enforce a
+# registry match.
+#
+# v2.2 Service Architecture: https://grounds.atlassian.net/wiki/spaces/GK/pages/216662019
+services:
+  leaderboard:
+    use: groundsgg.leaderboard.v1.LeaderboardService

@@ -1,0 +1,8 @@
+name: SampleLeaderboardPlugin
+version: 0.1.0
+main: gg.grounds.samples.SampleLeaderboardPlugin
+api-version: '1.21'
+authors: [Grounds]
+description: |
+  Demonstrates the v2.2 Service Architecture. On every PlayerJoinEvent,
+  bumps the player's "logins" leaderboard via LeaderboardService.
