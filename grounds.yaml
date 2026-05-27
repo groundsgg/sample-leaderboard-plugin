@@ -13,3 +13,12 @@ baseImage: paper
 services:
   leaderboard:
     use: groundsgg.leaderboard.v1.LeaderboardService
+
+# Typed NATS event subscriptions. Forge injects `NATS_URL` when this
+# block is non-empty. The plugin subscribes via GroundsEvents.connect()
+# and dispatches typed proto callbacks. Subject wildcards (>, *) are
+# allowed; server-side NATS account-permissions will enforce the
+# subject whitelist once provisioned.
+events:
+  - subject: match.lifecycle.ended.>
+    schema: gg.grounds.events.match.MatchEnded

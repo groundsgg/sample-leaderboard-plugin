@@ -29,6 +29,9 @@ dependencies {
     // needs at runtime.
     implementation("gg.grounds:library-grpc-contracts-sdk:main-SNAPSHOT")
     implementation("gg.grounds:library-grpc-contracts-leaderboard:main-SNAPSHOT")
+    // Event proto definitions — MatchEnded for the lifecycle
+    // subscription below.
+    implementation("gg.grounds:library-grpc-contracts-events:1.0.0")
 
     // Protoc-generated stubs for LeaderboardService land here at
     // compile time via the protobuf plugin (added in a follow-up — for
