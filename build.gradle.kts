@@ -4,7 +4,7 @@ import com.google.protobuf.gradle.id
 plugins {
     kotlin("jvm") version "2.2.20"
     id("com.gradleup.shadow") version "9.0.0-beta12"
-    id("gg.grounds.push") version "0.7.0"
+    id("gg.grounds.push") version "0.12.0"
     id("com.google.protobuf") version "0.9.4"
 }
 
