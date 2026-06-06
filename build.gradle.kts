@@ -74,6 +74,10 @@ protobuf {
 
 tasks.shadowJar {
     archiveClassifier.set("")
+    // jnats (pulled by the SDK's typed NATS client) ships OSGi bundle metadata
+    // under META-INF/versions/9/OSGI-INF/. Paper's PluginRemapper trips over the
+    // duplicate entry and silently fails to load the shaded gamemode plugin.
+    exclude("META-INF/versions/**/OSGI-INF/**")
 }
 
 tasks.build { dependsOn(tasks.shadowJar) }

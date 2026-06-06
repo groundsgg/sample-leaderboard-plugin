@@ -1,7 +1,13 @@
 apiVersion: grounds.gg/v1
 name: sample-leaderboard-plugin
-type: plugin-paper
-baseImage: paper
+# A real game: forge renders type:gamemode as an Agones Fleet (not a plain
+# Deployment), so the Velocity proxy discovers it as a routable backend via
+# plugin-platform-router. baseImage paper-gamemode bakes plugin-agones-paper
+# (the SDK that drives GameServer Ready/Allocated).
+type: gamemode
+baseImage: paper-gamemode
+agones:
+  replicas: 1
 
 # Declared Domain-Services this plugin calls via the Grounds SDK.
 # Forge injects `LEADERBOARD_SERVICE_URL` into the pod's env; the SDK
