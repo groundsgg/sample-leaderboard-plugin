@@ -83,5 +83,5 @@ tasks.shadowJar {
 tasks.build { dependsOn(tasks.shadowJar) }
 
 groundsPush {
-    apiUrl.set(providers.environmentVariable("GROUNDS_API_URL").orElse("https://platform.grnds.io"))
+    apiUrl.set(providers.environmentVariable("GROUNDS_API_URL").orElse("https://api.grounds.gg"))
 }
